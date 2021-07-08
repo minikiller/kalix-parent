@@ -1,15 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.kalix</groupId>
     <artifactId>kalix-parent</artifactId>
     <name>Kalix Parent</name>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
 
+    <scm>
+        <connection>scm:git:https://github.com/chenyanxu/kalix-parent.git</connection>
+        <developerConnection>scm:git:https://github.com/chenyanxu/kalix-parent.git</developerConnection>
+    </scm>
+
     <properties>
-        <globle.version>1.0.0-SNAPSHOT</globle.version>
+        <baseline>1.0.0</baseline>
+        <baseline.skip>true</baseline.skip>
+        <!--<globle.version>1.0.0-RELEASE</globle.version>-->
+        <!--child project version-->
+        <project.framework.version>1.0.1-SNAPSHOT</project.framework.version>
+        <project.admin.version>1.0.1-SNAPSHOT</project.admin.version>
+        <project.middleware.version>1.0.1-SNAPSHOT</project.middleware.version>
+        <project.common.version>1.0.1-SNAPSHOT</project.common.version>
+        <project.oa.version>1.0.1-SNAPSHOT</project.oa.version>
+        <project.schedule.version>1.0.1-SNAPSHOT</project.schedule.version>
+        <project.tools.version>1.0.1-SNAPSHOT</project.tools.version>
+        <project.ar.version>1.0.0-SNAPSHOT</project.ar.version>
+        <project.research.version>1.0.0-SNAPSHOT</project.research.version>
+        <project.art.version>1.0.0-SNAPSHOT</project.art.version>
+        <project.monitor.version>1.0.0-SNAPSHOT</project.monitor.version>
+        <project.integration.version>1.0.0-SNAPSHOT</project.integration.version>
+        <project.educational.version>1.0.0-SNAPSHOT</project.educational.version>
+        <project.general.version>1.0.0-SNAPSHOT</project.general.version>
+        <project.exhibition.version>1.0.0-SNAPSHOT</project.exhibition.version>
+        <project.enrolment.version>1.0.0-SNAPSHOT</project.enrolment.version>
+        <project.exam.version>1.0.0-SNAPSHOT</project.exam.version>
         <!--some example OSGi runtime properties-->
         <org.osgi.service.http.port>8080</org.osgi.service.http.port>
         <org.osgi.service.http.port.secure>8443</org.osgi.service.http.port.secure>
@@ -17,11 +43,12 @@
         <org.osgi.compendium.version>5.0.0</org.osgi.compendium.version>
         <org.osgi.enterprise.version>5.0.0</org.osgi.enterprise.version>
 
-        <karaf.version>4.0.5</karaf.version>
+        <karaf.version>4.2.2</karaf.version>
+
         <karaf.etc.path>${karaf.path}/etc</karaf.etc.path>
         <karaf.bin.path>${karaf.path}/bin</karaf.bin.path>
         <karaf.deploy.path>${karaf.path}/deploy</karaf.deploy.path>
-        <maven.version>3.3.9</maven.version>
+        <maven.version>3.5.3</maven.version>
         <maven.conf.path>${maven.path}/conf</maven.conf.path>
         <!-- Database settings -->
         <dbunit.dataTypeFactoryName>org.dbunit.ext.mysql.MySqlDataTypeFactory</dbunit.dataTypeFactoryName>
@@ -38,7 +65,7 @@
         <!--plugin version-->
         <!--<maven-antrun-plugin.version>1.7</maven-antrun-plugin.version>-->
         <maven-antrun-plugin.version>1.8</maven-antrun-plugin.version>
-        <maven-bundle-plugin.version>3.0.1</maven-bundle-plugin.version>
+        <maven-bundle-plugin.version>3.5.1</maven-bundle-plugin.version>
         <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
         <maven-dependency-plugin.version>2.10</maven-dependency-plugin.version>
         <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
@@ -48,45 +75,37 @@
         <maven-source-plugin.version>3.0.0</maven-source-plugin.version>
         <maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
         <maven-site-plugin.version>3.5</maven-site-plugin.version>
-        <openjpa-maven-plugin.version>2.4.0</openjpa-maven-plugin.version>
-        <openjpa.version>2.4.0.Release</openjpa.version>
+        <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
+        <openjpa-maven-plugin.version>3.0.0</openjpa-maven-plugin.version>
+        <openjpa.version>3.0.0</openjpa.version>
 
         <depends-maven-plugin.version>1.3.1</depends-maven-plugin.version>
         <build-helper-maven-plugin.version>1.10</build-helper-maven-plugin.version>
         <exec-maven-plugin.version>1.4.0</exec-maven-plugin.version>
         <hibernate3-maven-plugin.version>3.0</hibernate3-maven-plugin.version>
-        <yuicompressor-maven-plugin.version>1.4.0</yuicompressor-maven-plugin.version>
+        <yuicompressor-maven-plugin.version>1.5.1</yuicompressor-maven-plugin.version>
         <native2ascii-maven-plugin.version>1.0-beta-1</native2ascii-maven-plugin.version>
-
         <cglib.range>[2,3)</cglib.range>
         <!-- Aries Blueprint Versions -->
+
         <ariesBlueprintAnnotationApiVersion>1.0.0</ariesBlueprintAnnotationApiVersion>
         <ariesBlueprintAnnotationImplVersion>1.0.0</ariesBlueprintAnnotationImplVersion>
         <log4j.version>1.2.17</log4j.version>
         <ant.contrib.version>20020829</ant.contrib.version>
+        <ant.version>1.9.4</ant.version>
 
         <!--bundle child property-->
         <bundle.symbolicName>must_define_in_child_module</bundle.symbolicName>
         <bundle.namespace>${bundle.symbolicName}</bundle.namespace>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
         <!-- fabric8 property-->
-        <fabric8.maven.plugin.version>3.0.33</fabric8.maven.plugin.version>
-        <fabric8.version>2.2.142</fabric8.version>
-
-
-        <dockerimage>${docker.registryPrefix}fabric8/${project.artifactId}:${project.version}</dockerimage>
-        <docker.image>${dockerimage}</docker.image>
-        <maven.compiler.target>1.7</maven.compiler.target>
-        <docker.from>fabric8/java</docker.from>
-        <docker.port.container.jolokia>8778</docker.port.container.jolokia>
-        <fabric8.label.group>quickstarts</fabric8.label.group>
-        <camel.version>2.15.2</camel.version>
-        <docker.env.MAIN>org.apache.camel.cdi.Main</docker.env.MAIN>
-        <version.compiler.plugin>2.3.1</version.compiler.plugin>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <docker.assemblyDescriptorRef>artifact-with-dependencies</docker.assemblyDescriptorRef>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <docker.maven.plugin.version>0.11.3</docker.maven.plugin.version>
+        <fabric8.version>3.0.11</fabric8.version>
+        <fabric8.maven.plugin.version>3.5.38</fabric8.maven.plugin.version>
+        <!--httpclient property-->
+        <httpclient.version>4.5.2</httpclient.version>
+        <!--swagger property-->
+        <swagger.annotations.version>1.5.10</swagger.annotations.version>
     </properties>
 
     <dependencyManagement>
@@ -102,20 +121,6 @@
         </dependencies>
     </dependencyManagement>
 
-    <reporting>
-    <plugins>
-      <plugin>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>2.10.3</version>
-        <configuration>
-          <detectLinks>true</detectLinks>
-          <detectJavaApiLink>true</detectJavaApiLink>
-          <linksource>true</linksource>
-        </configuration>
-      </plugin>
-    </plugins>
-  </reporting>
-
     <build>
         <resources>
             <resource>
@@ -130,13 +135,18 @@
             </resource>
         </resources>
         <extensions>
-      <extension>
-        <groupId>org.apache.maven.wagon</groupId>
-        <artifactId>wagon-webdav-jackrabbit</artifactId>
-        <version>2.10</version>
-      </extension>
-    </extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-webdav-jackrabbit</artifactId>
+                <version>2.10</version>
+            </extension>
+        </extensions>
         <plugins>
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.6.0.1398</version>
+            </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
@@ -171,24 +181,6 @@
                 <artifactId>maven-dependency-plugin</artifactId>
                 <version>${maven-dependency-plugin.version}</version>
             </plugin>
-            <!--?js?css??????-->
-            <!--<plugin>
-                <groupId>net.alchim31.maven</groupId>
-                <artifactId>yuicompressor-maven-plugin</artifactId>
-                <version>${yuicompressor-maven-plugin.version}</version>
-                <configuration>
-                    <statistics>true</statistics>
-                    <jswarn>false</jswarn>
-                    <suffix>.min</suffix>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>compress</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>-->
             <plugin>
                 <groupId>org.ops4j</groupId>
                 <artifactId>maven-pax-plugin</artifactId>
@@ -204,8 +196,10 @@
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
                 <version>${maven-bundle-plugin.version}</version>
+                <inherited>true</inherited>
                 <extensions>true</extensions>
                 <configuration>
+                    <obrRepository>NONE</obrRepository>
                     <instructions>
                         <Bundle-SymbolicName>${bundle.symbolicName}</Bundle-SymbolicName>
                         <Bundle-Version>${project.version}</Bundle-Version>
@@ -214,6 +208,19 @@
                         <_include>-osgi.bnd</_include>
                     </instructions>
                 </configuration>
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>baseline</id>-->
+                        <!--<goals>-->
+                            <!--<goal>baseline</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<comparisonVersion>${baseline}</comparisonVersion>-->
+                            <!--<skip>${baseline.skip}</skip>-->
+                            <!--<failOnError>true</failOnError>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
+                <!--</executions>-->
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -234,7 +241,7 @@
                     <debug>true</debug>
                     <optimize>true</optimize>
                     <showDeprecation>true</showDeprecation>
-                    <showWarnings>true</showWarnings>
+                    <showWarnings>false</showWarnings>
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
@@ -275,53 +282,84 @@
                         </goals>
                         <configuration>
                             <target>
-                                <taskdef resource="net/sf/antcontrib/antcontrib.properties" />
+                                <taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
                                 <if>
-                                    <equals arg1="${project.packaging}" arg2="bundle" />
+                                    <equals arg1="${project.packaging}" arg2="bundle"/>
                                     <then>
                                         <if>
-                                            <available file="target/${project.artifactId}-${project.version}.jar" />
+                                            <available file="target/${project.artifactId}-${project.version}.jar"/>
                                             <then>
                                                 <if>
                                                     <available file="${karaf.deploy.path}" type="dir"></available>
                                                     <then>
-                                                        <copy file="target/${project.artifactId}-${project.version}.jar" todir="${karaf.deploy.path}" />
+                                                        <copy file="target/${project.artifactId}-${project.version}.jar"
+                                                              todir="${karaf.deploy.path}"/>
                                                     </then>
-                                                    <else>
-                                                        <echo>Karaf deploy path does not exist</echo>
-                                                    </else>
                                                 </if>
                                             </then>
-                                            <else>
-                                                <echo>The file does not exist</echo>
-                                            </else>
                                         </if>
                                     </then>
                                 </if>
+                                <!--<if>-->
+                                <!--<equals arg1="${project.artifactId}" arg2="kalix-parent"/>-->
+                                <!--<then>-->
+                                <!--<if>-->
+                                <!--<available file="src/main/resources/settings.xml"/>-->
+                                <!--<then>-->
+                                <!--<copy file="src/main/resources/settings.xml"-->
+                                <!--todir="${maven.conf.path}"/>-->
+                                <!--</then>-->
+                                <!--</if>-->
+                                <!--</then>-->
+                                <!--</if>-->
                                 <if>
-                                    <available file="${maven.conf.path}" type="dir"></available>
-                                    <then>
-                                        <if>
-                                            <available file="src/main/resources/settings.xml" />
-                                            <then>
-                                                <copy file="src/main/resources/settings.xml" todir="${maven.conf.path}" />
-                                            </then>
-                                        </if>
-                                    </then>
-                                </if>
-                                <if>
-                                    <equals arg1="${project.artifactId}" arg2="framework-core-etc" />
+                                    <equals arg1="${project.description}" arg2="ETC"/>
                                     <then>
                                         <if>
                                             <available file="${karaf.etc.path}" type="dir"></available>
                                             <then>
                                                 <copy todir="${karaf.etc.path}">
-                                                    <fileset dir="src/main/resources" />
+                                                    <fileset dir="target/classes"  includes="*.cfg">
+                                                    </fileset>
                                                 </copy>
                                             </then>
-                                            <else>
-                                                <echo>Karaf deploy path does not exist</echo>
-                                            </else>
+                                        </if>
+                                    </then>
+                                </if>
+                            </target>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>default-cli</id>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
+                                <if>
+                                    <equals arg1="${project.description}" arg2="ETC"/>
+                                    <then>
+                                        <if>
+                                            <available file="${karaf.etc.path}" type="dir"></available>
+                                            <then>
+                                                <copy todir="${karaf.etc.path}">
+                                                    <fileset dir="target/classes"  includes="*.cfg">
+                                                    </fileset>
+                                                </copy>
+                                            </then>
+                                        </if>
+                                    </then>
+                                </if>
+                                <if>
+                                    <equals arg1="${project.artifactId}" arg2="kalix-parent"/>
+                                    <then>
+                                        <if>
+                                            <available file="src/main/resources/settings.xml"/>
+                                            <then>
+                                                <copy file="src/main/resources/settings.xml"
+                                                      todir="${maven.conf.path}"/>
+                                            </then>
                                         </if>
                                     </then>
                                 </if>
@@ -358,7 +396,7 @@
                 <version>${hibernate3-maven-plugin.version}</version>
                 <configuration>
                     <hibernatetool>
-                        <jpaconfiguration />
+                        <jpaconfiguration/>
                     </hibernatetool>
                 </configuration>
             </plugin>
@@ -369,37 +407,18 @@
                 <executions>
                     <execution>
                         <goals>
-                            <goal>resource</goal>
+                            <!--<goal>resource</goal>-->
                             <!--<goal>build</goal>-->
                         </goals>
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.jolokia</groupId>
-                <artifactId>docker-maven-plugin</artifactId>
-                <version>${docker.maven.plugin.version}</version>
-                <configuration>
-                    <images>
-                        <image>
-                            <name>${docker.image}</name>
-                            <build>
-                                <from>${docker.from}</from>
-                                <assembly>
-                                    <descriptorRef>${docker.assemblyDescriptorRef}</descriptorRef>
-                                </assembly>
-                                <env>
-                                    <MAIN>${docker.env.MAIN}</MAIN>
-                                </env>
-                            </build>
-                        </image>
-                    </images>
-                </configuration>
-            </plugin>
+
         </plugins>
         <pluginManagement>
             <plugins>
                 <plugin>
+                    <!--jpa增强插件-->
                     <groupId>org.apache.openjpa</groupId>
                     <artifactId>openjpa-maven-plugin</artifactId>
                     <version>${openjpa-maven-plugin.version}</version>
@@ -407,7 +426,8 @@
                         <includes>**/entities/*.class</includes>
                         <addDefaultConstructor>true</addDefaultConstructor>
                         <enforcePropertyRestrictions>true</enforcePropertyRestrictions>
-                        <persistenceXmlFile>${project.build.outputDirectory}/META-INF/persistence-jpa.xml</persistenceXmlFile>
+                        <persistenceXmlFile>${project.build.outputDirectory}/META-INF/persistence-jpa.xml
+                        </persistenceXmlFile>
                     </configuration>
                     <executions>
                         <execution>
@@ -427,28 +447,180 @@
                     </dependencies>
                 </plugin>
                 <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>native2ascii-maven-plugin</artifactId>
-                    <version>${native2ascii-maven-plugin.version}</version>
+                    <!-- YUI Compressor Maven压缩插件 -->
+                    <groupId>net.alchim31.maven</groupId>
+                    <artifactId>yuicompressor-maven-plugin</artifactId>
+                    <version>${yuicompressor-maven-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>compress</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <!-- 读取js,css文件采用UTF-8编码 -->
+                        <encoding>UTF-8</encoding>
+                        <!-- 不显示js可能的错误 -->
+                        <jswarn>false</jswarn>
+                        <!-- 若存在已压缩的文件，会先对比源文件是否有改动  有改动便压缩，无改动就不压缩 -->
+                        <force>false</force>
+                        <!-- 在指定的列号后插入新行 -->
+                        <linebreakpos>-1</linebreakpos>
+                        <!-- 压缩之前先执行聚合文件操作 -->
+                        <preProcessAggregates>false</preProcessAggregates>
+                        <!-- 压缩后保存文件后缀 无后缀 -->
+                        <nosuffix>true</nosuffix>
+                        <!--<suffix>.min</suffix>-->
+                        <!-- 源目录，即需压缩的根目录 -->
+                        <sourceDirectory>src/main/webapp</sourceDirectory>
+                        <outputDirectory>target/classes/min</outputDirectory>
+                        <!-- 压缩js和css文件 -->
+                        <includes>
+                            <include>**/*.js</include>
+                            <include>**/*.css</include>
+                        </includes>
+                        <excludes>
+                            <exclude>resources/**/*.*</exclude>
+                        </excludes>
+                    </configuration>
                 </plugin>
-
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>${maven-release-plugin.version}</version>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>
+
+    <!--<reporting>-->
+    <!--<plugins>-->
+    <!--<plugin>-->
+    <!--<groupId>org.apache.maven.plugins</groupId>-->
+    <!--<artifactId>maven-javadoc-plugin</artifactId>-->
+    <!--<version>2.10.3</version>-->
+    <!--<configuration>-->
+    <!--<detectLinks>true</detectLinks>-->
+    <!--<detectJavaApiLink>true</detectJavaApiLink>-->
+    <!--<linksource>true</linksource>-->
+    <!--</configuration>-->
+    <!--</plugin>-->
+    <!--</plugins>-->
+    <!--</reporting>-->
     <distributionManagement>
         <repository>
-            <id>nexus</id>
-            <name>private-nexus-library-releases</name>
-            <url>http://nexus.apps.kalix.com/content/repositories/releases/</url>
+            <id>nexus-releases</id>
+            <name>releases</name>
+            <url>http://nexus.apps.bogon.com/nexus/content/repositories/releases/</url>
         </repository>
         <snapshotRepository>
-            <id>local-nexus</id>
-            <name>private-nexus-library-snapshots</name>
-            <url>http://nexus/content/repositories/snapshots/</url>
+            <id>nexus-snapshots</id>
+            <name>snapshots</name>
+            <url>http://nexus.apps.bogon.com/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
-        <site>
-      <id>website</id>
-      <url>dav:http://content-repository/sites/${project.groupId}/${project.artifactId}/${project.version}</url>
-    </site>
+        <!--<site>-->
+        <!--<id>website</id>-->
+        <!--<url>dav:http://content-repository/sites/${project.groupId}/${project.artifactId}/${project.version}</url>-->
+        <!--</site>-->
     </distributionManagement>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>maven-kalix-cn</id>
+            <name>Maven Kalix Mirror</name>
+            <url>http://nexus.apps.bogon.com/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <profiles>
+        <profile>
+            <id>jdk-1.8</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+                <jdk>1.8</jdk>
+            </activation>
+            <properties>
+                <maven.compiler.source>1.8</maven.compiler.source>
+                <maven.compiler.target>1.8</maven.compiler.target>
+                <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+            </properties>
+        </profile>
+        <profile>
+            <id>windows-env</id>
+            <activation>
+                <os>
+                    <family>Windows</family>
+                </os>
+            </activation>
+            <properties>
+                <maven.path>d:/java-develop/tools/apache-maven-${maven.version}</maven.path>
+                <karaf.path>d:/java-develop/tools/apache-karaf-${karaf.version}</karaf.path>
+                <rest.pretty>true</rest.pretty>
+                <webcontext.deploy>false</webcontext.deploy>
+            </properties>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>net.alchim31.maven</groupId>
+                            <artifactId>yuicompressor-maven-plugin</artifactId>
+                            <executions>
+                                <execution>
+                                    <phase>not_run</phase>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>
+        <profile>
+            <id>linux-env</id>
+            <activation>
+                <os>
+                    <family>Linux</family>
+                </os>
+            </activation>
+            <properties>
+                <maven.path>/root/java-develop/tools/apache-maven-${maven.version}</maven.path>
+                <karaf.path>/root/java-develop/tools/apache-karaf-${karaf.version}</karaf.path>
+                <rest.pretty>false</rest.pretty>
+                <webcontext.deploy>true</webcontext.deploy>
+            </properties>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>net.alchim31.maven</groupId>
+                            <artifactId>yuicompressor-maven-plugin</artifactId>
+                            <executions>
+                                <execution>
+                                    <phase>compile</phase>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>
+        <profile>
+            <id>sonar</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <!-- Optional URL to server. Default value is http://localhost:9000 -->
+                <sonar.host.url>
+                    http://localhost:9000
+                </sonar.host.url>
+            </properties>
+        </profile>
+    </profiles>
 </project>
